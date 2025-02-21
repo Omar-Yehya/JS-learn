@@ -1,5 +1,4 @@
 const { getRandomNumber } = require('./../utils/Helpers.js')
-const date = new Date()
 
 let fullname =['omar','yehya','people']
 
@@ -109,6 +108,7 @@ return  letter = bool ? word[0] : word.at(-1)
 //do abs21-n if bigger then 21 return double abs
 
 
+
 function mixStart(word){
       
       let newWord= word.slice(1,word.length)
@@ -152,15 +152,3 @@ switch(true){
 
 
 
-let rannum=26
-
-if(rannum<=25){
-      console.log('first')
-
-}else if(rannum<=50){
-      console.log('second')
-}else if(rannum<=75){
-      console.log('third')
-}else{
-      console.log('fourth')
-}
