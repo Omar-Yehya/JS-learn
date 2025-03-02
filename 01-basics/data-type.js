@@ -150,5 +150,19 @@ switch(true){
 //example /[abc]/.test(var)
 
 
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
 
+
+//Array.from loops each element
+//Array.of makes  whatever you give it a array 
+
+//const numbers = [1, 2, 2, 3, 3, 4, 5, 5];
+// const uniqueNumbers = numbers.filter( (num,  index, self) => self.indexOf(num) === index)
+
+//console.log(nums.sort((a, b) => a-b))  SORT 
+//console.log(numbers.flat(3)) makes nested array one array 
+// ... spread operator 
+
+//JSON.stringify   from object to json
+//JSON.parse      from json to object

@@ -1,4 +1,3 @@
-
 function close10(int1,int2){
       
     if (Math.abs(int1-10)===Math.abs(int2-10)){
@@ -490,6 +489,7 @@ function extraFront(str){
     return newStr
 }
 
+
 //Given a string and a second "word" string, we'll say that the word matches the string 
 // if it appears at the front of the string, except its first char does not need to match 
 // exactly. On a match, return the front of the string, or otherwise return the empty string.
@@ -967,8 +967,6 @@ function mapAB4(object){
  LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
 */
 
-
-
 function cigarParty(cigars, isWeekend){
     return (cigars >= 40 && cigars <= 60 && isWeekend === false) || (cigars >= 40 && isWeekend === true)
 }
@@ -1093,11 +1091,476 @@ function fizzString(str){
 
 }
 
-
 function fizzString2(n){
+    let str=''
+    if (n % 3 === 0){
+        str+="Fizz"
+    }
+    if (n % 5 === 0){
+        str += "Buzz"
+    }
+    if (str){
+        return str += '!'
+    }else{
+        return String(n) +'!'
+    }
+}
+
+// git MERGE VS git REBASE 
+
+
+function twoAsOne(a,b,c){
+    let checker = Math.max(a,b,c)- Math.min(a,b,c)
+    if(checker === a || checker === b || checker === c ){
+        return true
+    }
+    return false 
+
+}
+
+function inOrder(a, b, c, bOk){
+    if (bOk){
+        return c > a && c > b
+    }
+    return  a < b  && b < c 
+}
+
+function inOrderEqual(a, b, c, equalOk){
+    if(equalOk){
+        return c >= b &&  b >= a
+    }
+    return a < b  && b < c
+}
+
+function lastDigit(a, b, c){
+    return a % 10 === b % 10 || a % 10 === c % 10 || b % 10 === c % 10
+}
+
+function lessBy10(a, b, c){
+    return (Math.max(a,b,c) - Math.min(a,b,c) )>=10
+}
+
+function withoutDoubles(die1, die2, noDoubles){
+    if(noDoubles && die1 === die2){
+        if(die1 === 6 ){
+            die1 = 1
+        }else {
+            die1 +=1
+        }
+        return die1 + die2
+    }
+
+    return die1 + die2
+}
+
+function maxMod5(a, b){
+    if(a === b){
+        return 0
+    }
+    return a % 5 === b % 5 ? Math.min(a,b): Math.max(a,b)
+}
+
+function redTicket(a, b, c){
+    if (a === 2 && b === 2 && c === 2){
+        return 10 
+    }else if (a === b && b === c){
+        return 5
+    }
+    return (a !== b && a !== c) ? 1: 0
+}
+
+function greenTicket(a, b, c){
+    if(a === b && b ===c){
+        return 20
+    }
+    return (a === b || a === c || b === c) ? 10: 0 
+}
+
+function blueTicket(a, b, c){
+    if (a + b === 10 || a + c === 10 || c + b === 10){
+        return 10
+    }else if (a + c  ===  a + b -10  ||b + c  === a + b -10){
+        return 5
+    }
+    return 0
+}
+
+function shareDigit(a,b){
+    return (a % 10 === b % 10  || a % 10 === Math.floor(b/10))  || (Math.floor(a/10) === b % 10 || Math.floor(a/10) === Math.floor(b/10)) 
+}
+
+function sumLimit(a,b){
+    let sum = a+b
+   return String(sum).length > String(a).length ? a: sum 
+}
+
+/*
+ LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
+********************************************************
+ LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
+*/
+
+// could be wrong 
+function makeBricks(small, big, goal){
+        return (small + (big * 5)) >= goal
+
+}
+
+function loneSum(a, b, c){
+    let sum =0
+    if (a !== b && a !== c) sum += a
+    if (b !== a && b !== c) sum += b
+    if (c !== a && c !== b) sum += c
+
+    return sum
+}
+
+function luckySum(a, b, c){
+    let sum = 0 
+    if (a === 13)  return sum
+    if (b === 13)  return sum += a
+    if (c === 13)  return sum += a + b
+    return a+b+c
+}
+
+
+function noTeenSum(a, b, c){
+    return fixTeen(a) + fixTeen(b) + fixTeen(c)
+}
+
+const fixTeen = (n) =>  {
+    if ((n >= 13 && n <= 19)   && (n !==15 && n !== 15)){
+        return 0
+    }
+    return n
+}
+
+// function roundSum(a, b, c){
+//         return round10(a) + round10(b) + round10(c) 
+// }
+
+// const round10 = (n) => {
+//     if(String(n).length === 2 ){
+//         if (n % 10 >= 5){
+//             if (n < 20 ) return 20
+//             else if(n <30) return 30
+            
+//         }
+
+//         if(n % 10 < 5){
+//             if (n < 15) return 10
+//             else if(n < 25) return 20
+            
+//         }
+//     }
+//     if(String(n).length === 1){
+//         if (n < 5) return 0
+//         else if(n >= 5) return 10
+        
+//     }
+    
+    
+// }
+// my code above 
+function roundSum(a, b, c){
+    return round10(a) + round10(b) + round10(c) 
+}
+
+function round10(n){
+    let rem = n % 10
+    return rem > 5 ? (n - rem) + 10: n - rem
+}
+
+// the question is worded disgustingly 
+function closeFar(a, b, c){
+    let isBclose = Math.abs(a-b) <=1
+    let isCclose = Math.abs(a-c) <=1
+
+    let isBfar = Math.abs(b-c) >=2
+    let isCfar = Math.abs(c-b) >=2
+
+    return (isBclose && isCfar) || (isCclose && isBfar)
+}
+
+function blackjack(a,b){
+    if(a > 21 ){
+        a = 0
+    }
+    if (b > 21){
+        b=0
+    }
+    return Math.max(a,b)
+}
+
+function evenlySpaced(a, b, c){
+   let arr = [a,b,c].sort((x, y) => x-y)
+   return arr[2] - arr[1] === arr[1] - arr[0]
+}
+
+function makeChocolate(small, big, goal){
+    if(big){
+        if(5 <= goal){
+            goal-=5
+            big --
+        }
+    }
+    if(small){
+        if (small >= goal){
+            return goal
+        }
+    }
+    return -1
+}
+// above is mine only works for test cases below is dynamic 
+function makeChocolate(small, big, goal){
+    let BigBarUsed = Math.min(Math.floor(goal/5), big)
+    goal -= BigBarUsed *5
+
+    if(small >= goal){
+        return goal
+    }
+    return -1 
 
 }
 
 
+/*
+ LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
+********************************************************
+ LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
+*/
 
-// git MERGE VS git REBASE 
+function doubleChar(str){
+    let double=''
+    for(let i of str){
+        double +=[i] + [i]
+    }
+    return double
+}
+
+function countHi(str){
+    let cnt =0
+    for(let letter=0; letter < str.length; letter ++ ){
+        if (str[letter] ==='h' && str[letter + 1] === 'i'){
+            cnt ++
+        }
+    }
+    return cnt 
+}
+
+function catDog(str){
+    let catCnt = 0
+    let dogCnt = 0
+    for(let letter = 0; letter < str.length-2; letter++){
+        if (str[letter] === 'c' && str[letter+1] === 'a' && str[letter+2] === 't'){
+            catCnt ++
+        }
+     }
+    for(let letter = 0; letter < str.length-2; letter++){
+        if (str[letter] === 'd' && str[letter+1] === 'o' && str[letter+2] === 'g'){
+            dogCnt ++
+        }
+    }
+   return catCnt === dogCnt
+}
+
+function countCode(str){
+    let cnt =0
+    let start=0
+     
+    for(let i = 0; i < str.length; i++){
+        if (/co.e/.test(str.slice(start,i+4))){
+            start++
+            cnt++
+        }else{
+            start++
+        }
+
+    }
+    return cnt
+}
+
+function endOther(a, b){
+    a = a.toLowerCase()
+    b = b.toLowerCase()
+
+    let aLength = a.length
+    let bLength = b.length 
+
+    if(aLength <= bLength){
+        console.log(b.slice(-aLength), a)
+        return b.slice(-aLength) === a
+    }else{
+        console.log(-bLength, b)
+        return a.slice(-bLength) === b
+    }
+
+}
+
+function xyzThere(str){
+    for(let i=0; i < str.length-2; i ++){
+        if( str[i] === 'x' && str[i+1] === 'y' && str[i+2] === 'z'){
+            if (i === 0 || str[i-1] !== '.'){
+                return true 
+            }
+        }
+    }
+    return false 
+}
+
+function bobThere(str){
+    return /b.b/.test(str)
+}
+
+function xyBalance(str){
+    let xBalance = true
+    for(let i = 0; i<str.length; i++){
+        if(str[i] === 'x') xBalance = false
+        if (str[i] === 'y' ) xBalance = true
+    }
+    return xBalance
+}
+
+function mixString(a, b){
+    let newStr=''
+    let bigger =''
+    let smaller = Math.min(a.length, b.length)
+    if (a.length>=b.length){
+         bigger = a
+    }else bigger = b
+    for(let i = 0; i < smaller; i++){
+        newStr += a[i]
+        newStr += b[i]
+    }
+    return newStr += bigger.slice(smaller)
+}
+
+function repeatEnd(str, n){
+    let newStr = ''
+    for(let i= 0; i < n; i++){
+        newStr +=str.slice(-n)
+    }
+    return newStr
+}
+
+
+function repeatFront(str, n){   
+    newStr = ''
+    for(let i = n; i >= 0;  i --){
+        newStr += str.slice(0, i)
+    }
+    return newStr
+}
+
+function repeatSeparator(word, sep, count){
+    let newStr= ''
+    for(let i = 0; i <count; i++ ){
+        newStr += word
+        newStr += sep
+        
+    }
+    return newStr.slice(0, -sep.length)
+
+}
+
+function prefixAgain(str, n){
+    let checker = str.slice(0, n)
+
+    for(let i = n; i <= str.length-1; i++){
+        if(str.slice(i, i+n) === checker){
+            return true 
+        }
+    }
+    return false
+}
+
+function xyzMiddle(str){
+    let index = str.indexOf('xyz')
+    return index !== 1 && index === str.slice(index+3).length || index+1 === str.slice(index+3).length || index === str.slice(index+3).length+1
+}
+
+//<3
+function getSandwich(str){
+    let firstIdx= str.indexOf('bread')
+    let lastIdx =str.lastIndexOf('bread')
+    if (firstIdx === -1 || firstIdx === lastIdx ){
+        return ""
+    }
+
+    return str.slice(firstIdx+5, lastIdx)
+}
+
+function sameStarChar(str){
+    for(let i = 0; i <= str.length; i++){
+        if(str[i] === '*'){
+            if(str[i-1] === str[i+1]){
+                return true
+            }
+        }
+    }
+    return false 
+}
+
+function oneTwo(str){
+    let newStr=''
+    let notNeeded = str.length %3
+    let moddedStr = notNeeded !==0 ? str.slice(0, -notNeeded): str
+    
+    for(let i = 0; i < moddedStr.length; i +=3){
+       newStr += str[i+1]
+       newStr += str[i+2]
+       newStr += str[i]
+    }
+    return newStr
+   
+}
+
+function zipZap(str){
+    for(let i = 0; i < str.length; i++){
+        if(str[i] === 'z' && str[i+2] === 'p'){
+            str=str.replace(str[i+1], '')
+        }
+    }
+    return str
+}
+//ew
+function starOut(str){
+    let newStr = ''
+    for(let i = 0; i < str.length; i++){
+        if(str[i-1] !== '*' && str[i+1] !== '*')newStr += str[i]
+
+    }
+    return newStr.replaceAll(/\*/g, '')
+     
+
+}
+
+function plusOut(str, word){
+    let size = word.length
+
+    for(let i = 0; i < str.length ; i ++){
+        if (str.slice(i, size + i) === word){
+           
+            continue
+        }
+        str = str.replace(str[i], '+')
+    }
+    return str
+
+}
+
+
+console.log(plusOut("12xy34", "xy"))
+console.log(plusOut("12xy34", "1"))
+console.log(plusOut("12xy34xyabcxy", "xy"))
+
+
+
+
+let arr =[1,2,10,20,25,50,3,1]
+let newarr =[]
+for(let i of arr){
+    if(i % 2 === 0 && newarr.length < 2) newarr.push(i)
+}
+
+console.log(newarr)
