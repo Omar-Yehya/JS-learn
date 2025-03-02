@@ -1557,10 +1557,3 @@ console.log(plusOut("12xy34xyabcxy", "xy"))
 
 
 
-let arr =[1,2,10,20,25,50,3,1]
-let newarr =[]
-for(let i of arr){
-    if(i % 2 === 0 && newarr.length < 2) newarr.push(i)
-}
-
-console.log(newarr)

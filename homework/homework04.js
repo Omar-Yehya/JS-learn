@@ -283,11 +283,3 @@ console.log(fizzBuzz(12, 5))
 console.log(fizzBuzz(5, 5))
 console.log(fizzBuzz(9, 6))
 
-
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> 01d30ed (new)
