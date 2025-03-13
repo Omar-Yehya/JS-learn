@@ -152,19 +152,4 @@ function mostRepeated(arr){
     return most
 }
 
-console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]))
 
-
-
-// let maxKey = null;
-// let maxCount = 0;
-// // Loop over keys in the hash to find the one with the highest count
-// for (let key in hashy) {
-//   if (hashy[key] > maxCount) {
-//     maxCount = hashy[key];
-//     maxKey = key;
-//   }
-// }
-
-// return maxKey;
-// }
