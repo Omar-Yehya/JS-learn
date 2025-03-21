@@ -141,6 +141,7 @@ function mostRepeated(arr){
         if (!(i in hashy)) hashy[i] = 1
         else hashy[i] ++
     }
+    console.log(hashy)
 
     for(let key in hashy){
         if (hashy[key] > max ){
