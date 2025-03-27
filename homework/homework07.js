@@ -95,14 +95,14 @@ function arrFactorial(nums){
 
 console.log(`\n--------------------Task Eight-----------------------\n`);
 
-function categorizeCharacters(str){
+function categorizeCharacters(str) {
     let letters = ''
     let digits = ''
     let specials = ''
 
-    for (let i of str){
+    for (let i of str) {
         if (i === ' ') continue
-        if (/[a-z]/i.test(i)) letters += i
+        else if (/[a-z]/i.test(i)) letters += i
         else if (/[0-9]/.test(i)) digits += i
         else specials += i
 
@@ -110,4 +110,7 @@ function categorizeCharacters(str){
     return [letters, digits, specials]
 
 }
+
+
+
 

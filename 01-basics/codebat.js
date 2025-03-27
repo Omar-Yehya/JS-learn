@@ -1549,11 +1549,190 @@ function plusOut(str, word){
 
 }
 
+/*
+ LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
+********************************************************
+ LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
+*/
 
-console.log(plusOut("12xy34", "xy"))
-console.log(plusOut("12xy34", "1"))
-console.log(plusOut("12xy34xyabcxy", "xy"))
+function countYZ(str){
+
+    let arr= str.split(' ')
+    let cnt = 0
+    for(let i of arr){
+        if (i.at(-1).toLowerCase() === 'z' || i.at(-1).toLowerCase() === 'y') cnt ++
+    }
+    return cnt
+}
+
+function withoutString(base, remove){
+    let newStr=''
+    for (let i = 0; i < base.length; i++){
+        if (base.slice(i, remove.length+i).toLowerCase() === remove.toLowerCase()){
+            i += remove.length - 1    
+            continue      
+        }
+        newStr += base[i]
+
+    }
+    return newStr
+}
+
+function equalIsNot(str){
+    let isCnt = 0
+    let notCnt = 0
+    for(let i = 0; i < str.length; i++){
+        if (str[i] === 'i' && str[i+1] === 's') isCnt ++
+        else if (str[i] === 'n' && str[i+1] === 'o' && str[i+2] === 't') notCnt ++
+
+    }
+    return isCnt === notCnt
+
+}
+
+function gHappy(str){
+    let flag = false
+    for(let i = 0; i < str.length; i ++){
+        if (str[i] === 'g'){
+            if(i > 0 && str[i-1] === 'g'|| i > str.length && str[i+1] === 'g') flag = true
+            else if(i > 0 && str[i-1] !== 'g'|| i > str.length && str[i+1] !== 'g') flag = false 
+           
+        }
+    }
+    return flag 
+
+}
+
+function countTriple(str){
+    let cnt = 0
+    for (let i = 0; i < str.length-2; i ++){
+        if (str[i] === str[i+1] && str[i+1] === str[i+2]) cnt ++
+
+    }
+    return cnt 
+}
+
+function sumDigits(str){
+    let sum =0
+    for (let i of str){
+        if (/[0-9]/.test(i)) sum += Number(i)
+    }
+    return sum
+}
+
+function sameEnds(str){
+
+    let half = str.length % 2 === 0 ? str.length / 2: Math.floor(str.length / 2)
+    while (half !== 0){
+        if( (str.slice(0, half) === str.slice(-half) ) && (str[half-1] === str[str.length - half] && (half === str.length / 2 || half === Math.floor(str.length / 2)))) return str[0]
+        else if (str.slice(0, half) === str.slice(-half)) return str.slice(0, half)
+        else half -= 1
+    }
+    return ''
+
+}
+
+function maxBlock(str){
+    let left = 0
+    let right = 1
+    let cnt = 0
+    if (str.length === 0) return 0
+    if (str.length === 1) return 1
+    while (right !== str.length ){
+        if (str[left] === str[right]){
+            
+            cnt = Math.max(cnt, right+1 - left)
+            right ++
+        
+        } else if (str[left] !== str[right] ){
+            cnt = Math.max(cnt, right - left)
+            left = right
+            right ++
+        }
+
+    }
+    return cnt 
+}
+
+function sumNumbers(str){
+    let total = 0
+    let arr = str.split(/[a-z\s]/i)
+    for (let i of arr){
+        if (/[0-9]/.test(i)) total += Number(i)
+    }
+    return total
+}
+
+function notReplace(str){
+    let empty = ''
+    for (let i = 0; i < str.length; i ++){
+        if (str[i] === 'i' && str[i+1] === 's' ){
+            if( ! (/[a-z]/i.test(str[i-1]) && /[a-z]/i.test(str[i+2]))){
+                empty += 'is not'
+            }
+        }else{
+           empty += str[i] 
+        }
+    }
+   return empty
+    
+}
+
+/*
+ LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
+********************************************************
+ LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
+*/
+
+//OPTIMIZE 
+function maxSpan(nums){
+    let max = 1
+    for(let i = 0; i < nums.length-1; i ++){
+        for(let j = i + 1; j < nums.length; j++ ){
+            if (nums[i] === nums[j]){
+                max = Math.max(max, j - i + 1)
+            }
+        }
+    }
+    return max
+
+}
+//maxSpan([1, 2, 1, 1, 3]) → 4
+// maxSpan([1, 4, 2, 1, 4, 1, 4]) → 6
+// maxSpan([1, 4, 2, 1, 4, 4, 4]) → 6
+
+function fix34(nums){
+    let j = 0
+
+    for (let i = 0; i < nums.length; i ++){
+      
+    }
+    return nums
+}
+
+console.log(fix34([1, 3, 1, 4]))
+console.log(fix34([1, 3, 1, 4, 4, 3, 1]))
+console.log(fix34([3, 2, 2, 4]))
 
 
 
+
+function fix34(nums) {
+    // Pointer to search for a 4 that is not following a 3
+    let j = 0;
+    // Loop through each element to process every 3
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] === 3 && nums[i + 1] !== 4) {
+            // Find the next 4 that is not immediately following a 3
+            while (nums[j] !== 4 || (j > 0 && nums[j - 1] === 3)) {
+                j++;
+            }
+            // Swap the element after the 3 with the misplaced 4
+            let temp = nums[i + 1];
+            nums[i + 1] = nums[j];
+            nums[j] = temp;
+        }
+    }
+    return nums;
+}
 

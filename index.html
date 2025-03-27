@@ -3,11 +3,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <h1> HELLO WORLD</h1>
-    <script src="index'js"></script>
+    <p>At TechGlobal we give skills to pay the bills</p>
+    <script type="module">
+        import { MathHelper } from './utils/Helpers.js';
+
+        const randomNum = MathHelper.getRandomNumber(1, 10);
+        console.log('Random Number:', randomNum);
+    </script>
+
+    <script type = "module">
+        import {batch11Helper} from './utils/batch11Helper.js'
+        batch11Helper.funcA()
+        batch11Helper.funcB()
+    </script>
+
 </body>
 </html>

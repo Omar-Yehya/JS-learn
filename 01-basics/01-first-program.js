@@ -1,54 +1,32 @@
+const Car = require("../proto/car");
+const Person = require("../proto/Person");
+const Product = require("../proto/prod");
+const Programmer = require("../proto/programer");
+// const car1 = new Car('Tesla', 'X', 2023, 8000)
+// const car2 = new Car('BMW', 'X7', 2022, 60000)
+// const car3 = new Car('Tesla', 'Y', 2020, 2700)
+// let arr =[car1, car2, car3]
 
 
-function checker(NUM){
-    if (NUM >=20 && NUM<=30){
-        console.log("yes")
-    }
-    console.log("WRONG")
-}
+// arr.forEach(car => {
+//     console.log(car)
+//     car.drive()
+//     car.brakes()
+//     console.log(`${car.year} ${car.make} ${car.model} is $${car.price}`)
+
+// })
 
 
 
+const pen = new Product('Pen', 20, 10)
+const mug = new Product('Mug', 10, 15)
+const tShirt = new Product('T-Shirt', 5, 20)
 
-function calculations(a, b){
-    const area = a*b;
-    const perm= 2*(a+b)
-    console.log("area is " + area);
-    console.log("perimeter is " + perm);
 
-}
 
-calculations(5,8)
+const person = new Person('John joe', 44)
+const coder = new Programmer('John Bro', 48, 'DooDoo Solutions')
 
-function incomeSplit(salary){
-    let year=salary;
-    let month= salary/12;
-    let week=salary/52
-    let biweek= week*2
-  
-     console.log(`Year:   $${year} 
-                 Month:   $${month}
-                 Week:   $${week.toFixed(2)}
-                 Biweek:   $${biweek.toFixed(2)} `
-    );
-}
-incomeSplit(120000)
-
-const LIST=[1,2,3,4,5,6];
-let i=0
-
-while (i<=LIST.length){
-    if(LIST[i]%2==0){
-    console.log(LIST[i])
-    i++
-    }
-    i++
-}
-
-console.log("\t **hello wolrd**" +"\n" +
-                "\t       O O" + '\n' +
-                '\t      |____|' 
-)
 
 
 

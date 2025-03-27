@@ -166,3 +166,125 @@ switch(true){
 
 //JSON.stringify   from object to json
 //JSON.parse      from json to object
+
+
+
+// synch
+
+//asynch
+
+
+function gotoCarvana(){
+     return new Promise((resolve, reject) =>{
+            setTimeout(() =>{
+
+     
+            console.log('Carvana website is loaded...')
+            resolve()
+            },500)
+      })
+   
+}
+
+function clickOnFinancing() {
+      return new Promise((resolve, reject) =>{
+            setTimeout(() =>{
+
+     
+            console.log('Finance is loaded... APPROVED')
+            resolve()
+            },1000)
+      })
+   
+}
+
+
+function validateHeading(expected){
+      return new Promise((resolve, reject) =>{
+            setTimeout(() =>{
+
+     
+            console.log(`${expected} heading is loaded...`)
+            resolve()
+            },750)
+      })
+   
+}
+
+function test1(){
+      gotoCarvana().then(() => {
+           clickOnFinancing()
+      }).then(() => {
+           validateHeading('GMC')
+      })
+  }
+
+test1()
+
+fetch('https://api.techglobal-training.com/students')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+// function test1() {
+
+//       setTimeout(() =>{
+//             gotoCarvana()
+//             setTimeout(() => {
+//                   clickOnFinancing()
+//                   setTimeout(() => {
+//                         validateHeading('Guaranteed Motor Cars')
+//                   },750)
+//             },1000)
+//       },500)
+      
+
+
+
+     
+// }
+
+// function test1(){
+//       gotoCarvana(() => {
+//             clickOnFinancing(() =>{
+//                   validateHeading('GUARANTEED MOTOR CARS')
+//             })
+//       })
+
+// }
+// test1()
+
+
+
+
+
+
+
+// function getEven(successCallback, errorCallback){
+
+//       setTimeout(() => {
+//             const ran =  Math.floor(Math.random() * (10 - 1 + 1) +1)
+//             console.log(ran)
+//             if(ran % 2 === 0) successCallback()
+//             else errorCallback()
+//       }, 1000);
+// }
+
+// getEven(() => {
+//       console.log('Success')
+// }, 
+// () => {
+//       console.log("Error")
+// })
+
+
+// const p = new Promise ((resolve, reject) =>{
+//       setTimeout(() =>{
+//             reject('RESOLVE')
+
+
+//       },2000)
+     
+// })
+
+// console.log(p)
