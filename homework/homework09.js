@@ -84,6 +84,7 @@ function countOccurrencesOfCharacters(str) {
     return cntStr
 }
 
+
 console.log(`\n--------------------Task Six-----------------------\n`);
 /*
 F(0) = 0 (base case)

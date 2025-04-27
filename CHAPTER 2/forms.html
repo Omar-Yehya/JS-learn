@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+
+    <style>
+
+        div{
+           width: 200px;
+           margin: 20px auto;
+        }
+        label{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1> HTMl Form</h1>
+    <form>
+        <div>
+        <label for = "name"> Name </label>
+        <input type="text" placeholder="Name" id="name"/>
+        </div>
+        
+        <div>
+        <label for = "lame"> Last Name </label>
+        <input type="text" placeholder="LName" id="lname"/>
+        </div>
+
+        <div>
+            <label for = "email"> Email </label>
+            <input type="email" placeholder="Email" id="email"/>
+        
+        </div>
+
+        <div>
+            <label for = "pass"> Password </label>
+            <input type="password"  id="pass"/>
+        
+        </div>
+
+        <div>
+            <h5> What is your favorite color? <h5>
+            <label for="Blue">Blue</label>
+            <input type="checkbox" id="color" />
+
+            <label for="Dark blue">Dark Blue</label>
+            <input type="checkbox" id="color" />
+
+            <label for="Light Blue">Light Blue</label>
+            <input type="checkbox" id="color" />
+
+            <label for="Baby Blue">Harsh Blue</label>
+
+            <input type="checkbox" id="color" />
+        
+        </div>
+
+        <div>
+            <h3>Will you attend class?</h3>
+            <label>Yes</label>
+            <input type="radio" name="classAttendance" id="Yes">
+
+            <label>No</label>
+            <input type="radio" name="classAttendance" id="No">
+        </div>
+        
+        <div>
+            <h3>Choose your country</h3>
+            <select>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="eygpt">Eygpt</option>
+                <option value="zimbabwe">Zimbabwe</option>
+                <option value="zimbabwe">Canada</option>
+
+
+
+            </select>
+        </div>
+
+        <div>
+            <h3>Choose your country? - Choose multiple</h3>
+            <select multiple>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="eygpt">Eygpt</option>
+                <option value="zimbabwe">Zimbabwe</option>
+                <option value="canada">Canada</option>
+
+
+
+            </select>
+        </div>
+
+        <div>
+            <textarea rows="6" cols="40" placeholder="Your message"></textarea>
+        </div>
+
+        <div>
+        <button type="submit"> Submit</button>
+        </div>
+    </form>
+</body>
+</html>
