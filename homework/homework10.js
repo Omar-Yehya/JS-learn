@@ -57,11 +57,14 @@ function isArmstrong(num){
     const arr = String(num).split('')
     let total = 0
     for(let i of arr){
-        total += Number(i) ** 3
+        total += Number(i) ** arr.length
+        
     }
+ 
     return num === total
 }
 
+console.log(isArmstrong(1634))
 
 console.log(`\n--------------------Task Five-----------------------\n`);
 //tried without str couldnt 
@@ -98,8 +101,6 @@ function splitString(str, num){
 
 
 }
-
-
 
 
 
