@@ -40,6 +40,11 @@ function calculateTotalPrice2(obj){
     return cnt
 
 }
+console.log(calculateTotalPrice2({ Apple: 4, Mango: 5}))
+console.log(calculateTotalPrice2({ Apple: 4, Mango: 8, Orange: 3 }))
+console.log(calculateTotalPrice2({ Apple: 0, Pineapple: 0, Orange: 0 }))
+console.log(calculateTotalPrice2({ Apple: 4, Pineapple: 1, Orange: 1, Mango:3 })) 	
+
 
 
 console.log(`\n--------------------Task Three-----------------------\n`);
