@@ -30,9 +30,9 @@ function calculateTotalPrice2(obj){
         else if (i === 'Orange') cnt += obj[i] * 3.29
 
         else if (i === 'Mango'){
-            let freeMangos = obj[i] / 4
+            let freeMangos = Math.floor(obj[i] / 4)
             if (obj[i] >= 4)cnt += (obj[i] * 4.99) - (freeMangos * 4.99)
-            cnt += (obj[i] * 4.99)
+            else cnt += (obj[i] * 4.99)
            
         }
         else if (i === 'Pineapple') cnt += obj[i] * 5.25
@@ -40,12 +40,10 @@ function calculateTotalPrice2(obj){
     return cnt
 
 }
-console.log(calculateTotalPrice2({ Apple: 4, Mango: 5}))
-console.log(calculateTotalPrice2({ Apple: 4, Mango: 8, Orange: 3 }))
-console.log(calculateTotalPrice2({ Apple: 0, Pineapple: 0, Orange: 0 }))
-console.log(calculateTotalPrice2({ Apple: 4, Pineapple: 1, Orange: 1, Mango:3 })) 	
 
-
+8
+4 = 8
+4 = 4 
 
 console.log(`\n--------------------Task Three-----------------------\n`);
 
@@ -106,6 +104,5 @@ function splitString(str, num){
 
 
 }
-
 
 

@@ -135,8 +135,8 @@ function countOccurrence(s1, s2){
     s1 = s1.toLowerCase().replace(/\s/g,'')
 
      for(let i of s1){
-        if (i in hashy1) hashy1[i] +=1
-        else if ( s2.includes(i)) hashy1[i] =1
+        if (i in hashy1) hashy1[i] += 1
+        else if ( s2.includes(i)) hashy1[i] = 1
      }
 
      for(let i of s2){
@@ -152,7 +152,6 @@ function countOccurrence(s1, s2){
      }
      return max
 
-     
      
 }
 

@@ -1733,89 +1733,26 @@ function fix34(nums) {
     return nums;
 }
 
-function fix45(nums){
-    pass
-
-}
-
-
-
-
-function no13(arr){
-    return arr.map(x => x === 13 ?  0: x)
-}
-
-
-function noDigit(str){
-    let newStr = ''
-    for (let i of str){
-        if (!/[0-9]/.test(i)) newStr +=i
-    }
-    return newStr
-}
-
-
-function noA(arr){
-    return arr.map(x => x[0].toLowerCase() === 'a' ? '###': x)
-}
-
-function isPrime(n){
-    if (n === 2) return true 
-    if (n % 2 === 0 || n <= 1) return false 
-    for(let i = 3; i <Math.sqrt(n); i += 2){
-        if (n % i === 0) return false
-    }
-    return true 
-}
-
-
-function countMultipleWords(arr){
-    let cnt = 0 
-    for(let i of arr){
-        if (i.trim().includes(' ')) cnt ++
-    }
-    return cnt 
-}
-
-
-function getDuplicates(arr){
-    const seen = new Set()
-    const dup = new Set()
-
-    for(let i of arr){
-        if(seen.has(i)) dup.add(i)
-        else seen.add(i)
-    }
-    return [...dup]
-}
-
-
-
-function removeDuplicates(arr){
-    //return [... new Set(arr)]
-    const arry = []
-    for(let i of arr){
-        if (arry.includes(i)) continue
-        arry.push(i)
-    }
-    return arry
-}
-
-function add(arr1, arr2){
-    const newArr = []
-
-    for (let i = 0; i < Math.max(arr1.length, arr2.length); i ++){
-        if (i >= arr1.length) newArr.push(arr2[i])
-        else if (i >= arr2.length) newArr.push(arr1[i])
-        else newArr.push(arr1[i] + arr2[i])
-    }
-    return newArr
-}
-
-function reverseStringWords(str){
-    let arr = str.trim().split(' ')
-    return arr.map(x => x.split('').reverse().join('')).join(' ')
+function fix45(nums) {
+    const fiveArray = [];
   
-}
+    // Collect all 5s not immediately after a 4
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] === 5 && nums[i - 1] !== 4) {
+        fiveArray.push(i);
+      }
+    }
+  
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] === 4 && nums[i + 1] !== 5) {
+        const fiveIndex = fiveArray.shift();
+        [nums[i + 1], nums[fiveIndex]] = [nums[fiveIndex], nums[i + 1]];
+      }
+    }
+  
+    return nums;
+  }
 
-console.log(reverseStringWords("I like JavaScript"))    
+console.log(fix45([5, 4, 9, 4, 9, 5]))// → [9, 4, 5, 4, 5, 9]
+console.log(fix45([1, 4, 1, 5]))// → [1, 4, 5, 1]
+console.log(fix45([1, 4, 1, 5, 5, 4, 1]))// → [1, 4, 5, 1, 1, 4, 5]
