@@ -1736,7 +1736,6 @@ function fix34(nums) {
 function fix45(nums) {
     const fiveArray = [];
   
-    // Collect all 5s not immediately after a 4
     for (let i = 0; i < nums.length; i++) {
       if (nums[i] === 5 && nums[i - 1] !== 4) {
         fiveArray.push(i);
@@ -1746,13 +1745,38 @@ function fix45(nums) {
     for (let i = 0; i < nums.length; i++) {
       if (nums[i] === 4 && nums[i + 1] !== 5) {
         const fiveIndex = fiveArray.shift();
-        [nums[i + 1], nums[fiveIndex]] = [nums[fiveIndex], nums[i + 1]];
+        [nums[i + 1], nums[fiveIndex]] = [nums[fiveIndex], nums[i + 1]]; //array destructuring same as making a temp var and adn switching there 
       }
     }
   
     return nums;
   }
 
-console.log(fix45([5, 4, 9, 4, 9, 5]))// → [9, 4, 5, 4, 5, 9]
-console.log(fix45([1, 4, 1, 5]))// → [1, 4, 5, 1]
-console.log(fix45([1, 4, 1, 5, 5, 4, 1]))// → [1, 4, 5, 1, 1, 4, 5]
+
+
+
+/*
+ LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
+********************************************************
+ LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP LVL UP
+*/
+
+
+
+function scoreIncreasing(nums){
+    for(let i = 0; i < nums.length; i ++){
+        if (nums[i] > nums[i+1]) return false
+    }
+    return true
+}
+
+function scores100(nums){
+    for(let i = 0; i < nums.length; i ++){
+        if (nums[i] === 100 && nums[i+1] === 100) return true
+    }
+    return false
+}
+
+console.log(scores100([1, 100, 100]))// → true
+console.log(scores100([1, 100, 99, 100]))// → false
+console.log(scores100([100, 1, 100, 100]))// → true
