@@ -21,7 +21,7 @@ console.log(isSumEvenOrOdd(7, 1, 9)) //       	-> "odd"
 console.log(isSumEvenOrOdd(1, 1, 1)) //  
 console.log(`\n--------------------Task Three-----------------------\n`);
 function decimal2(arr){
-    return arr.map(x => x.toFixed(2))
+    return arr.map(x => Number(x.toFixed(2)))
 
 }
 
@@ -30,8 +30,6 @@ console.log(decimal2( [76.62, 128.4, 84] )) // 		-> [ 76.62, 128.4, 84 ]
 console.log(decimal2( [20987, 3.53245, 12.345, 32.9] )) // 	-> [ 20987, 3.53, 12.35, 32.90 ]
 console.log(decimal2( [ ] )) // 			-> [  ]
 console.log(decimal2( [4.35623, 8.9742] )) //		-> [ 4.36, 8.97 ]
-
-
 console.log(`\n--------------------Task Four-----------------------\n`);
 function myPow(n1, pow){
     let total = 1
@@ -64,20 +62,7 @@ function findLongestWord(str){
     }
 
     return longest
- 
-    
-
 }
-
-
-
-
-
-
-
-
-
-
 console.log(findLongestWord("The quick brown fox jumped over the lazy dog")) // -> "jumped"
 console.log(findLongestWord("This is a sample string for testing")) // 	-> "testing" 
 console.log(findLongestWord("One two ten"))     // 	-> "One"
