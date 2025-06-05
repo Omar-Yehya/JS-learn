@@ -26,7 +26,7 @@ function sum(arr, bool){
     }else{
         for(let i = 0; i < arr.length; i ++){
             if (i % 2 !== 0) cnt += arr[i]
-            }
+        }
     }
 
     return cnt
@@ -49,7 +49,7 @@ console.log(`\n--------------------Task Four-----------------------\n`);
 
 function canFormString(s1, s2){
      const hashy = {}
-    s2 = s2.toLowerCase().replace(/\s/g,'')
+    s2 = s2.toLowerCase().replace(/\s+/g,'')
     s1 = s1.toLowerCase()
 
      for(let i of s1){

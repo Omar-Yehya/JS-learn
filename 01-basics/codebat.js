@@ -1777,6 +1777,3 @@ function scores100(nums){
     return false
 }
 
-console.log(scores100([1, 100, 100]))// → true
-console.log(scores100([1, 100, 99, 100]))// → false
-console.log(scores100([100, 1, 100, 100]))// → true
